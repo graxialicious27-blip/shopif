@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silent Spark Press - Literary Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .bounce-in {
+            animation: bounceIn 0.6s ease-out;
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .section {
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        .nav-btn.active {
+            background-color: #4f46e5 !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-6 bounce-in">Silent Spark Press</h1>
+            <p class="text-xl mb-8 opacity-90">Wholesale Literary Distribution • Illuminating stories that move us across time, culture, and place</p>
+            <button onclick="scrollToShowcase()" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                View Wholesale Catalog
+            </button>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('products')" class="nav-btn px-4 py-2 rounded-lg bg-green-100 text-green-600 hover:bg-green-200 transition-colors active">Book Collection</button>
+                <button onclick="showSection('about')" class="nav-btn px-4 py-2 rounded-lg bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors">About Us</button>
+                <button onclick="showSection('contact')" class="nav-btn px-4 py-2 rounded-lg bg-blue-100 text-blue-600 hover:bg-blue-200 transition-colors">Contact</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Book Showcase Section -->
+    <section id="products" class="section active py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Book Collection</h2>
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <!-- Book 1 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Old_Curiosity_Shop.png?v=1754688403" alt="The Old Curiosity Shop cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Old Curiosity Shop</h3>
+                        <p class="text-gray-600 text-sm mb-3">This softcover edition of 'The Old Curiosity Shop' is crafted for timeless appeal, perfect for curated collections.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/thesignoffour.png?v=1754715816" alt="The Sign of Four cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Sign of Four</h3>
+                        <p class="text-gray-600 text-sm mb-3">A classic Sherlock Holmes mystery featuring the detective's brilliant deductive skills and thrilling adventure.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Reign_of_Greed.png?v=1754688403" alt="The Reign of Greed cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Reign of Greed</h3>
+                        <p class="text-gray-600 text-sm mb-3">A powerful social commentary exploring themes of corruption and justice in colonial society.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Putnam_Tradition.png?v=1754688403" alt="The Putnam Tradition cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Putnam Tradition</h3>
+                        <p class="text-gray-600 text-sm mb-3">An exploration of American literary heritage and the enduring values that shape our cultural identity.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_scarlet_letter.png?v=1754688403" alt="The Scarlet Letter cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Scarlet Letter</h3>
+                        <p class="text-gray-600 text-sm mb-3">Hawthorne's masterpiece exploring themes of sin, guilt, and redemption in Puritan New England.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 6 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_secret_garden.png?v=1754688403" alt="The Secret Garden cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Secret Garden</h3>
+                        <p class="text-gray-600 text-sm mb-3">A beloved children's classic about healing, friendship, and the transformative power of nature.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 7 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Scarlet_Pimpernel.png?v=1754688403" alt="The Scarlet Pimpernel cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Scarlet Pimpernel</h3>
+                        <p class="text-gray-600 text-sm mb-3">A thrilling tale of adventure and heroism set during the French Revolution's Reign of Terror.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 8 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Planet_Savers.png?v=1754688403" alt="The Planet Savers cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Planet Savers</h3>
+                        <p class="text-gray-600 text-sm mb-3">A science fiction adventure exploring themes of identity and survival on an alien world.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 9 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_republic.png?v=1754688403" alt="The Republic cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Republic</h3>
+                        <p class="text-gray-600 text-sm mb-3">Plato's foundational work on justice, politics, and the ideal state - essential philosophical reading.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 10 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_queen_of_hearts.png?v=1754688403" alt="The Queen of Hearts cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Queen of Hearts</h3>
+                        <p class="text-gray-600 text-sm mb-3">A captivating collection of interconnected stories filled with mystery, romance, and intrigue.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 11 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Right_Time.png?v=1754688403" alt="The Right Time cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Right Time</h3>
+                        <p class="text-gray-600 text-sm mb-3">A thoughtful exploration of timing, destiny, and the choices that shape our lives.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 12 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Red_Badge_of_Courage-_An_Episode_of_the_American_Civil_War.png?v=1754688403" alt="The Red Badge of Courage cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Red Badge of Courage</h3>
+                        <p class="text-gray-600 text-sm mb-3">Stephen Crane's powerful Civil War novel exploring courage, fear, and the reality of battle.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 13 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_People_of_the_Black_Circle.png?v=1754688403" alt="The People of the Black Circle cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The People of the Black Circle</h3>
+                        <p class="text-gray-600 text-sm mb-3">A thrilling Conan adventure filled with sorcery, intrigue, and epic battles in exotic lands.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 14 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Prince_and_the_Pauper.png?v=1754688401" alt="The Prince and the Pauper cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Prince and the Pauper</h3>
+                        <p class="text-gray-600 text-sm mb-3">Mark Twain's tale of two boys who switch places, exploring themes of identity and social class.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 15 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Secret_of_the_Ninth_Planet.png?v=1754688402" alt="The Secret of the Ninth Planet cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Secret of the Ninth Planet</h3>
+                        <p class="text-gray-600 text-sm mb-3">A classic science fiction adventure exploring the mysteries of our solar system's outer reaches.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 16 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_seven_dials_mystery.png?v=1754688402" alt="The Seven Dials Mystery cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Seven Dials Mystery</h3>
+                        <p class="text-gray-600 text-sm mb-3">Agatha Christie's thrilling mystery featuring secret societies, murder, and brilliant detection.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 17 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_quest_of_the_silver_fleece.png?v=1754688403" alt="The Quest of the Silver Fleece cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Quest of the Silver Fleece</h3>
+                        <p class="text-gray-600 text-sm mb-3">A powerful novel exploring themes of race, economics, and social justice in the American South.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 18 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Portrait_of_a_Lady_Volume_1.png?v=1754688402" alt="The Portrait of a Lady Volume 1 cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Portrait of a Lady Volume 1</h3>
+                        <p class="text-gray-600 text-sm mb-3">Henry James's masterpiece exploring the complexities of American and European society.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 19 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_phantom_of_the_opera.png?v=1754688402" alt="The Phantom of the Opera cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Phantom of the Opera</h3>
+                        <p class="text-gray-600 text-sm mb-3">Gaston Leroux's haunting tale of mystery, romance, and tragedy beneath the Paris Opera House.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 20 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Pilgrim_s_Progress_from_this_world_to_that_which_is_to_come.png?v=1754688401" alt="The Pilgrim's Progress cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Pilgrim's Progress</h3>
+                        <p class="text-gray-600 text-sm mb-3">John Bunyan's timeless Christian allegory following the spiritual journey of Christian.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 21 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_origin_of_species.png?v=1754688401" alt="The Origin of Species cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Origin of Species</h3>
+                        <p class="text-gray-600 text-sm mb-3">Charles Darwin's groundbreaking work on evolution and natural selection that changed science forever.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 22 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Secret_Adversary.png?v=1754688401" alt="The Secret Adversary cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Secret Adversary</h3>
+                        <p class="text-gray-600 text-sm mb-3">Agatha Christie's first Tommy and Tuppence mystery featuring espionage and international intrigue.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 23 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Railway_Children.png?v=1754688401" alt="The Railway Children cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Railway Children</h3>
+                        <p class="text-gray-600 text-sm mb-3">E. Nesbit's beloved children's classic about three siblings and their adventures near a railway line.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 24 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Possessed-_or_The_Devils.png?v=1754688401" alt="The Possessed (or The Devils) cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Possessed (or The Devils)</h3>
+                        <p class="text-gray-600 text-sm mb-3">Dostoevsky's powerful novel exploring political extremism, moral corruption, and the chaos of revolutionary fervor.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 25 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Pickwick_Papers.png?v=1754688402" alt="The Pickwick Papers cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Pickwick Papers</h3>
+                        <p class="text-gray-600 text-sm mb-3">Charles Dickens's first novel, a delightful collection of humorous adventures following the Pickwick Club members.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-8">About Silent Spark Press</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-left">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-600">Our Mission</h3>
+                        <p class="text-gray-600 mb-6">
+                            At Silent Spark Press, we believe in the transformative power of literature. Our carefully curated collection brings together timeless classics and contemporary voices that illuminate the human experience across cultures and generations. We specialize in wholesale distribution to bookstores, libraries, and educational institutions.
+                        </p>
+                        <h3 class="text-xl font-semibold mb-4 text-purple-600">Quality & Craftsmanship</h3>
+                        <p class="text-gray-600">
+                            Each book in our collection is thoughtfully designed with premium materials, elegant typography, and durable binding. We're committed to creating editions that honor both the author's vision and the reader's experience. Our wholesale program offers competitive pricing for bulk orders.
+                        </p>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-100 to-indigo-100 p-8 rounded-lg">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">📚</div>
+                            <h4 class="text-lg font-semibold mb-2">Founded in 2020</h4>
+                            <p class="text-gray-600 text-sm mb-4">Born from a passion for beautiful books and meaningful stories</p>
+                            <div class="grid grid-cols-2 gap-4 text-center">
+                                <div>
+                                    <div class="text-2xl font-bold text-purple-600">500+</div>
+                                    <div class="text-xs text-gray-600">Titles Published</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-purple-600">50k+</div>
+                                    <div class="text-xs text-gray-600">Happy Readers</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 7 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Scarlet_Pimpernel.png?v=1754688403" alt="The Scarlet Pimpernel cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Scarlet Pimpernel</h3>
+                        <p class="text-gray-600 text-sm mb-3">A thrilling tale of adventure and heroism set during the French Revolution's Reign of Terror.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 8 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Planet_Savers.png?v=1754688403" alt="The Planet Savers cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Planet Savers</h3>
+                        <p class="text-gray-600 text-sm mb-3">A science fiction adventure exploring themes of identity and survival on an alien world.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 9 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_republic.png?v=1754688403" alt="The Republic cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Republic</h3>
+                        <p class="text-gray-600 text-sm mb-3">Plato's foundational work on justice, politics, and the ideal state - essential philosophical reading.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 10 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_queen_of_hearts.png?v=1754688403" alt="The Queen of Hearts cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Queen of Hearts</h3>
+                        <p class="text-gray-600 text-sm mb-3">A captivating collection of interconnected stories filled with mystery, romance, and intrigue.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 11 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Right_Time.png?v=1754688403" alt="The Right Time cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Right Time</h3>
+                        <p class="text-gray-600 text-sm mb-3">A thoughtful exploration of timing, destiny, and the choices that shape our lives.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 12 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Red_Badge_of_Courage-_An_Episode_of_the_American_Civil_War.png?v=1754688403" alt="The Red Badge of Courage cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Red Badge of Courage</h3>
+                        <p class="text-gray-600 text-sm mb-3">Stephen Crane's powerful Civil War novel exploring courage, fear, and the reality of battle.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 13 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_People_of_the_Black_Circle.png?v=1754688403" alt="The People of the Black Circle cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The People of the Black Circle</h3>
+                        <p class="text-gray-600 text-sm mb-3">A thrilling Conan adventure filled with sorcery, intrigue, and epic battles in exotic lands.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 14 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Prince_and_the_Pauper.png?v=1754688401" alt="The Prince and the Pauper cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Prince and the Pauper</h3>
+                        <p class="text-gray-600 text-sm mb-3">Mark Twain's tale of two boys who switch places, exploring themes of identity and social class.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 15 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Secret_of_the_Ninth_Planet.png?v=1754688402" alt="The Secret of the Ninth Planet cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Secret of the Ninth Planet</h3>
+                        <p class="text-gray-600 text-sm mb-3">A classic science fiction adventure exploring the mysteries of our solar system's outer reaches.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 16 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_seven_dials_mystery.png?v=1754688402" alt="The Seven Dials Mystery cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Seven Dials Mystery</h3>
+                        <p class="text-gray-600 text-sm mb-3">Agatha Christie's thrilling mystery featuring secret societies, murder, and brilliant detection.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 17 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_quest_of_the_silver_fleece.png?v=1754688403" alt="The Quest of the Silver Fleece cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Quest of the Silver Fleece</h3>
+                        <p class="text-gray-600 text-sm mb-3">A powerful novel exploring themes of race, economics, and social justice in the American South.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 18 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Portrait_of_a_Lady_Volume_1.png?v=1754688402" alt="The Portrait of a Lady Volume 1 cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Portrait of a Lady Volume 1</h3>
+                        <p class="text-gray-600 text-sm mb-3">Henry James's masterpiece exploring the complexities of American and European society.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 19 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_phantom_of_the_opera.png?v=1754688402" alt="The Phantom of the Opera cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Phantom of the Opera</h3>
+                        <p class="text-gray-600 text-sm mb-3">Gaston Leroux's haunting tale of mystery, romance, and tragedy beneath the Paris Opera House.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 20 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Pilgrim_s_Progress_from_this_world_to_that_which_is_to_come.png?v=1754688401" alt="The Pilgrim's Progress cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Pilgrim's Progress</h3>
+                        <p class="text-gray-600 text-sm mb-3">John Bunyan's timeless Christian allegory following the spiritual journey of Christian.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 21 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_origin_of_species.png?v=1754688401" alt="The Origin of Species cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Origin of Species</h3>
+                        <p class="text-gray-600 text-sm mb-3">Charles Darwin's groundbreaking work on evolution and natural selection that changed science forever.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 22 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Secret_Adversary.png?v=1754688401" alt="The Secret Adversary cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Secret Adversary</h3>
+                        <p class="text-gray-600 text-sm mb-3">Agatha Christie's first Tommy and Tuppence mystery featuring espionage and international intrigue.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 23 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Railway_Children.png?v=1754688401" alt="The Railway Children cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Railway Children</h3>
+                        <p class="text-gray-600 text-sm mb-3">E. Nesbit's beloved children's classic about three siblings and their adventures near a railway line.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 24 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Possessed-_or_The_Devils.png?v=1754688401" alt="The Possessed (or The Devils) cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Possessed (or The Devils)</h3>
+                        <p class="text-gray-600 text-sm mb-3">Dostoevsky's powerful novel exploring political extremism, moral corruption, and the chaos of revolutionary fervor.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 25 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Pickwick_Papers.png?v=1754688402" alt="The Pickwick Papers cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Pickwick Papers</h3>
+                        <p class="text-gray-600 text-sm mb-3">Charles Dickens's first novel, a delightful collection of humorous adventures following the Pickwick Club members.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                <option>General Inquiry</option>
+                                <option>Wholesale Pricing Request</option>
+                                <option>Bulk Order Inquiry</option>
+                                <option>Distribution Partnership</option>
+                                <option>Author Submissions</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <div class="mt-8 pt-8 border-t border-gray-200">
+                        <div class="grid md:grid-cols-3 gap-6 text-center">
+                            <div>
+                                <div class="text-2xl mb-2">📧</div>
+                                <div class="text-sm font-medium">Email</div>
+                                <div class="text-sm text-gray-600">hello@silentsparkpress.com</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl mb-2">📞</div>
+                                <div class="text-sm font-medium">Phone</div>
+                                <div class="text-sm text-gray-600">(555) 123-4567</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl mb-2">📍</div>
+                                <div class="text-sm font-medium">Address</div>
+                                <div class="text-sm text-gray-600">123 Literary Lane<br>Book City, BC 12345</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 7 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Scarlet_Pimpernel.png?v=1754688403" alt="The Scarlet Pimpernel cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Scarlet Pimpernel</h3>
+                        <p class="text-gray-600 text-sm mb-3">A thrilling tale of adventure and heroism set during the French Revolution's Reign of Terror.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 8 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Planet_Savers.png?v=1754688403" alt="The Planet Savers cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Planet Savers</h3>
+                        <p class="text-gray-600 text-sm mb-3">A science fiction adventure exploring themes of identity and survival on an alien world.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 9 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_republic.png?v=1754688403" alt="The Republic cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Republic</h3>
+                        <p class="text-gray-600 text-sm mb-3">Plato's foundational work on justice, politics, and the ideal state - essential philosophical reading.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 10 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_queen_of_hearts.png?v=1754688403" alt="The Queen of Hearts cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Queen of Hearts</h3>
+                        <p class="text-gray-600 text-sm mb-3">A captivating collection of interconnected stories filled with mystery, romance, and intrigue.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 11 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Right_Time.png?v=1754688403" alt="The Right Time cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Right Time</h3>
+                        <p class="text-gray-600 text-sm mb-3">A thoughtful exploration of timing, destiny, and the choices that shape our lives.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 12 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Red_Badge_of_Courage-_An_Episode_of_the_American_Civil_War.png?v=1754688403" alt="The Red Badge of Courage cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Red Badge of Courage</h3>
+                        <p class="text-gray-600 text-sm mb-3">Stephen Crane's powerful Civil War novel exploring courage, fear, and the reality of battle.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 13 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_People_of_the_Black_Circle.png?v=1754688403" alt="The People of the Black Circle cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The People of the Black Circle</h3>
+                        <p class="text-gray-600 text-sm mb-3">A thrilling Conan adventure filled with sorcery, intrigue, and epic battles in exotic lands.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 14 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Prince_and_the_Pauper.png?v=1754688401" alt="The Prince and the Pauper cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Prince and the Pauper</h3>
+                        <p class="text-gray-600 text-sm mb-3">Mark Twain's tale of two boys who switch places, exploring themes of identity and social class.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 15 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Secret_of_the_Ninth_Planet.png?v=1754688402" alt="The Secret of the Ninth Planet cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Secret of the Ninth Planet</h3>
+                        <p class="text-gray-600 text-sm mb-3">A classic science fiction adventure exploring the mysteries of our solar system's outer reaches.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 16 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_seven_dials_mystery.png?v=1754688402" alt="The Seven Dials Mystery cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Seven Dials Mystery</h3>
+                        <p class="text-gray-600 text-sm mb-3">Agatha Christie's thrilling mystery featuring secret societies, murder, and brilliant detection.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 17 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_quest_of_the_silver_fleece.png?v=1754688403" alt="The Quest of the Silver Fleece cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Quest of the Silver Fleece</h3>
+                        <p class="text-gray-600 text-sm mb-3">A powerful novel exploring themes of race, economics, and social justice in the American South.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 18 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Portrait_of_a_Lady_Volume_1.png?v=1754688402" alt="The Portrait of a Lady Volume 1 cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Portrait of a Lady Volume 1</h3>
+                        <p class="text-gray-600 text-sm mb-3">Henry James's masterpiece exploring the complexities of American and European society.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 19 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_phantom_of_the_opera.png?v=1754688402" alt="The Phantom of the Opera cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Phantom of the Opera</h3>
+                        <p class="text-gray-600 text-sm mb-3">Gaston Leroux's haunting tale of mystery, romance, and tragedy beneath the Paris Opera House.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 20 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Pilgrim_s_Progress_from_this_world_to_that_which_is_to_come.png?v=1754688401" alt="The Pilgrim's Progress cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Pilgrim's Progress</h3>
+                        <p class="text-gray-600 text-sm mb-3">John Bunyan's timeless Christian allegory following the spiritual journey of Christian.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 21 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/the_origin_of_species.png?v=1754688401" alt="The Origin of Species cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Origin of Species</h3>
+                        <p class="text-gray-600 text-sm mb-3">Charles Darwin's groundbreaking work on evolution and natural selection that changed science forever.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 22 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Secret_Adversary.png?v=1754688401" alt="The Secret Adversary cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Secret Adversary</h3>
+                        <p class="text-gray-600 text-sm mb-3">Agatha Christie's first Tommy and Tuppence mystery featuring espionage and international intrigue.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 23 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Railway_Children.png?v=1754688401" alt="The Railway Children cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Railway Children</h3>
+                        <p class="text-gray-600 text-sm mb-3">E. Nesbit's beloved children's classic about three siblings and their adventures near a railway line.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 24 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Possessed-_or_The_Devils.png?v=1754688401" alt="The Possessed (or The Devils) cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Possessed (or The Devils)</h3>
+                        <p class="text-gray-600 text-sm mb-3">Dostoevsky's powerful novel exploring political extremism, moral corruption, and the chaos of revolutionary fervor.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 25 -->
+                <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
+                    <div class="h-64 flex items-center justify-center bg-gray-100">
+                        <img src="https://cdn.shopify.com/s/files/1/0729/8580/4836/files/The_Pickwick_Papers.png?v=1754688402" alt="The Pickwick Papers cover" class="h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">The Pickwick Papers</h3>
+                        <p class="text-gray-600 text-sm mb-3">Charles Dickens's first novel, a delightful collection of humorous adventures following the Pickwick Club members.</p>
+                        <div class="text-center">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Silent Spark Press</h3>
+                    <p class="text-gray-400 text-sm">Illuminating stories that move us across time, culture, and place.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" onclick="showSection('products')" class="hover:text-white transition-colors">Book Collection</a></li>
+                        <li><a href="#" onclick="showSection('about')" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" onclick="showSection('contact')" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Classic Literature</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contemporary Fiction</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Poetry</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Essays</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">📘</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">🐦</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">📷</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Silent Spark Press. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update navigation buttons
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Smooth scroll to top of section
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        
+        function scrollToShowcase() {
+            document.getElementById('products').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        
+        // Wholesale inquiry functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.card-hover')) {
+                const bookTitle = e.target.closest('.card-hover').querySelector('h3').textContent;
+                
+                // Create a simple notification for wholesale inquiry
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-4 right-4 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 slide-in';
+                notification.textContent = `For wholesale pricing on "${bookTitle}", please contact us!`;
+                
+                document.body.appendChild(notification);
+                
+                // Remove notification after 4 seconds
+                setTimeout(() => {
+                    notification.remove();
+                }, 4000);
+            }
+        });
+        
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Create success message
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 slide-in';
+            notification.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+            
+            document.body.appendChild(notification);
+            
+            // Clear form
+            this.reset();
+            
+            // Remove notification after 4 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 4000);
+        });
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show products section by default
+            showSection('products');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96c4fb72662d454d',t:'MTc1NDcxODY5Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
